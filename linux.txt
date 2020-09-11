@@ -181,3 +181,9 @@ int main()
     }while(I != -1);
     return 0;
 }
+
+
+https://computing.llnl.gov/tutorials/pthreads/#Abstract
+For Linux the correct command is:
+
+gcc -o exefilename filename.c -lpthread
