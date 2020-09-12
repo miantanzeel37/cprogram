@@ -36,23 +36,38 @@ int main()
 				
     do
     {
-        puts("Enter exit to quit or -dc or -dm or -rs to read file");
+        puts("Enter exit to quit \n OR 'monitor-dc' OR 'monitor-dm' OR 'monitor-rs' to read file and show on monitor, \n OR 'copy-dc' OR 'copy-dm' OR 'copy-rs' to copy to file, \n OR 'both-dc' OR 'both-dm' OR 'both-rs' to copy to file");
         printf("Enter your choice: ");
         scanf("%s",&status);
 		if(strcmp(status, "exit") == 0){
 			I = -1;
 		}
-		else if(strcmp(status, "-dc") == 0){
+		else if(strcmp(status, "monitor-dc") == 0){
 			I = 1;
 		}
-		else if(strcmp(status, "-dm") == 0){
+		else if(strcmp(status, "monitor-dm") == 0){
 			I = 2;
 		}
-		else if(strcmp(status, "-rs") == 0){
+		else if(strcmp(status, "monitor-rs") == 0){
 			I = 3;
 		}
-		else if(strcmp(status, "copy") == 0){
+		else if(strcmp(status, "copy-dc") == 0){
 			I = 4;
+		}
+		else if(strcmp(status, "copy-dm") == 0){
+			I = 5;
+		}
+		else if(strcmp(status, "copy-rs") == 0){
+			I = 6;
+		}
+		else if(strcmp(status, "both-dc") == 0){
+			I = 7;
+		}
+		else if(strcmp(status, "both-dm") == 0){
+			I = 8;
+		}
+		else if(strcmp(status, "both-rs") == 0){
+			I = 9;
 		}
 		else{
 			I = 0;
@@ -186,7 +201,7 @@ int main()
 			 * "data/file1.txt" is complete file path to read
 			 */
 			fPtr = fopen("config0.cnf", "r");
-
+			fp = fopen ("copy/config0_copy.txt","w");
 
 			/* fopen() return NULL if last operation was unsuccessful */
 			if(fPtr == NULL)
@@ -201,26 +216,246 @@ int main()
 			/* File open success message */
 			printf("Simulator Program \n");
 			printf("================= \n\n");
-			printf("Config File Copy Display \n");
+			printf("Config File Copy Only \n");
 			printf("------------------- \n\n");
 
 			
 
 			do 
 			{
-				/* Read single character from file */
-				ch = fgetc(fPtr);
+				  /* Read single character from file */
+				  ch = fgetc(fPtr);
+				
+				   /* open the file for writing*/
+				  fputc(ch, fp);	
+				  
 
-			   /* open the file for writing*/
-			  fp = fopen ("config0_copy.txt","w");
-			   
-				fprintf (fp, "%d\n",fPtr);
-			  
-			    
-			   //fprintf (fp, "Entered:  %d\n");
-			   
-				/* Print character read on console */
-				putchar(ch);
+			} while(ch != EOF); /* Repeat this if last read character is not EOF */
+
+			fclose (fp);
+			/* Done with this file, close file to release resource */
+			fclose(fPtr);
+			printf("\n\n Simulator Program End.\n\n\n");
+			break;
+			case 5:
+			/* 
+			 * Open file in r (read) mode. 
+			 * "data/file1.txt" is complete file path to read
+			 */
+			fPtr = fopen("metadata_0.mdf", "r");
+			fp = fopen ("metadata_0_copy.txt","w");
+
+			/* fopen() return NULL if last operation was unsuccessful */
+			if(fPtr == NULL)
+			{
+				/* Unable to open file hence exit */
+				printf("Unable to open file.\n");
+				printf("Please check whether file exists and you have read privilege.\n");
+				//exit(EXIT_FAILURE);
+			}
+
+
+			/* File open success message */
+			printf("Simulator Program \n");
+			printf("================= \n\n");
+			printf("Metadata File Copy Only \n");
+			printf("------------------- \n\n");
+
+			
+
+			do 
+			{
+				  /* Read single character from file */
+				  ch = fgetc(fPtr);
+				
+				   /* open the file for writing*/
+				  fputc(ch, fp);	
+				  
+				
+
+			} while(ch != EOF); /* Repeat this if last read character is not EOF */
+
+			fclose (fp);
+			/* Done with this file, close file to release resource */
+			fclose(fPtr);
+			printf("\n\n Simulator Program End.\n\n\n");
+			break;
+			case 6:
+			/* 
+			 * Open file in r (read) mode. 
+			 * "data/file1.txt" is complete file path to read
+			 */
+			fPtr = fopen("runsimulator_0.mdf", "r");
+			fp = fopen ("runsimulator_0_copy.txt","w");
+
+			/* fopen() return NULL if last operation was unsuccessful */
+			if(fPtr == NULL)
+			{
+				/* Unable to open file hence exit */
+				printf("Unable to open file.\n");
+				printf("Please check whether file exists and you have read privilege.\n");
+				//exit(EXIT_FAILURE);
+			}
+
+
+			/* File open success message */
+			printf("Simulator Program \n");
+			printf("================= \n\n");
+			printf("Simulator File Copy Display \n");
+			printf("------------------- \n\n");
+
+			
+
+			do 
+			{
+				  /* Read single character from file */
+				  ch = fgetc(fPtr);
+				
+				   /* open the file for writing*/
+				  fputc(ch, fp);	
+				  
+				   
+				   /* Print character read on console */
+				   putchar(ch);
+				
+
+			} while(ch != EOF); /* Repeat this if last read character is not EOF */
+
+			fclose (fp);
+			/* Done with this file, close file to release resource */
+			fclose(fPtr);
+			printf("\n\n Simulator Program End.\n\n\n");
+			break;
+			case 7:
+			/* 
+			 * Open file in r (read) mode. 
+			 * "data/file1.txt" is complete file path to read
+			 */
+			fPtr = fopen("config0.cnf", "r");
+			fp = fopen ("copy/config0_copy.txt","w");
+
+			/* fopen() return NULL if last operation was unsuccessful */
+			if(fPtr == NULL)
+			{
+				/* Unable to open file hence exit */
+				printf("Unable to open file.\n");
+				printf("Please check whether file exists and you have read privilege.\n");
+				//exit(EXIT_FAILURE);
+			}
+
+
+			/* File open success message */
+			printf("Simulator Program \n");
+			printf("================= \n\n");
+			printf("Config File Copy and Display \n");
+			printf("------------------- \n\n");
+
+			
+
+			do 
+			{
+				  /* Read single character from file */
+				  ch = fgetc(fPtr);
+				
+				   /* open the file for writing*/
+				  fputc(ch, fp);	
+				  
+				   
+				   /* Print character read on console */
+				   putchar(ch);
+				
+
+			} while(ch != EOF); /* Repeat this if last read character is not EOF */
+
+			fclose (fp);
+			/* Done with this file, close file to release resource */
+			fclose(fPtr);
+			printf("\n\n Simulator Program End.\n\n\n");
+			break;
+			case 8:
+			/* 
+			 * Open file in r (read) mode. 
+			 * "data/file1.txt" is complete file path to read
+			 */
+			fPtr = fopen("metadata_0.mdf", "r");
+			fp = fopen ("metadata_0_copy.txt","w");
+
+			/* fopen() return NULL if last operation was unsuccessful */
+			if(fPtr == NULL)
+			{
+				/* Unable to open file hence exit */
+				printf("Unable to open file.\n");
+				printf("Please check whether file exists and you have read privilege.\n");
+				//exit(EXIT_FAILURE);
+			}
+
+
+			/* File open success message */
+			printf("Simulator Program \n");
+			printf("================= \n\n");
+			printf("Metadata File Copy and Display \n");
+			printf("------------------- \n\n");
+
+			
+
+			do 
+			{
+				  /* Read single character from file */
+				  ch = fgetc(fPtr);
+				
+				   /* open the file for writing*/
+				  fputc(ch, fp);	
+				  
+				   
+				   /* Print character read on console */
+				   putchar(ch);
+				
+
+			} while(ch != EOF); /* Repeat this if last read character is not EOF */
+
+			fclose (fp);
+			/* Done with this file, close file to release resource */
+			fclose(fPtr);
+			printf("\n\n Simulator Program End.\n\n\n");
+			break;
+			case 9:
+			/* 
+			 * Open file in r (read) mode. 
+			 * "data/file1.txt" is complete file path to read
+			 */
+			fPtr = fopen("runsimulator_0.mdf", "r");
+			fp = fopen ("runsimulator_0_copy.txt","w");
+
+			/* fopen() return NULL if last operation was unsuccessful */
+			if(fPtr == NULL)
+			{
+				/* Unable to open file hence exit */
+				printf("Unable to open file.\n");
+				printf("Please check whether file exists and you have read privilege.\n");
+				//exit(EXIT_FAILURE);
+			}
+
+
+			/* File open success message */
+			printf("Simulator Program \n");
+			printf("================= \n\n");
+			printf("Simulator File Copy and Display \n");
+			printf("------------------- \n\n");
+
+			
+
+			do 
+			{
+				  /* Read single character from file */
+				  ch = fgetc(fPtr);
+				
+				   /* open the file for writing*/
+				  fputc(ch, fp);	
+				  
+				   
+				   /* Print character read on console */
+				   putchar(ch);
+				
 
 			} while(ch != EOF); /* Repeat this if last read character is not EOF */
 
@@ -236,6 +471,7 @@ int main()
     }while(I != -1);
     return 0;
 }
+
 
 
 #include <stdio.h>
