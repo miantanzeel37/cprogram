@@ -498,3 +498,8 @@ https://computing.llnl.gov/tutorials/pthreads/#Abstract
 For Linux the correct command is:
 
 gcc -o exefilename filename.c -lpthread
+
+for https://computing.llnl.gov/tutorials/pthreads/samples/join.c 
+include ‘<math.h>’
+gcc -o test test.c -lpthread -lm
+
