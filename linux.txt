@@ -608,4 +608,42 @@ pthread_exit(NULL);
 
 gcc -o test test.c -lpthread
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
+mian file:
+	To Monitor
+	To File (without monitor)
+	Both
+	
+States:
+	new
+	ready
+	running
+	exiting
+	
+
+Process include 
+	Fork()				//Create child process copy
+		Data/Files		//copy created
+		Code			//copy created
+		Stack			//copy created
+		Register		//copy created
+		
+1. System calls involved in process
+2. OS treats different process differently
+3. Different process have different copies of Data, Files, code	
+4. Content switching is slower
+5. Blocking a process will not block another process
+6. Independent
+		
+Thread Include
+	Data/File 			//No copy created
+	Code				//No copy created
+	Stack				//copy created
+	Register			//copy created
+
+1. There is no system call involved/ User/Application level involvement not kernel involvement
+2. All user level threads treated as single task/process for OS 
+3. Threads share some copy of code and data
+4. Context switching is faster
+5. Blocking a thread will block entire process 
+6. Interdependent
 
