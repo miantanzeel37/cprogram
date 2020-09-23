@@ -923,3 +923,7 @@ pthread_exit(NULL);
     return 0;
 }
 
+
+//Install ssh
+https://linuxconfig.org/install-ssh-server-on-redhat-8
+
